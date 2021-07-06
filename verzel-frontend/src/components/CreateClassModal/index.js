@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { MdClose } from 'react-icons/md';
+import { useForm } from 'react-hook-form';
 import * as Yup  from 'yup';
 
 import api from '../../api';
@@ -11,18 +12,10 @@ const createSchema = Yup.object().shape({
 });
 
 const CreateClassModal = ({ setReload, moduleId, setModalCreateClass}) => {
-  const [ name, setName ] = useState('');
-  const [ date, setDate ] = useState('');
+  const { register, handleSubmit } = useForm();
   const [ errors, setErrors] = useState({});
 
-  const handleCreateClasses = async (e) => {
-    e.preventDefault();
-
-    const data = {
-      name,
-      class_date: date,
-    }
-
+  const handleCreateClasses = async (data) => {
     try {
       await createSchema.validate( data, {
         abortEarly: false
@@ -34,7 +27,6 @@ const CreateClassModal = ({ setReload, moduleId, setModalCreateClass}) => {
       setReload(true)
 
     } catch (error) {
-      console.log('ERROR', error)
       if(error instanceof Yup.ValidationError) {
         const validationErrors = {}
         error.inner.forEach((error) => {
@@ -57,14 +49,13 @@ const CreateClassModal = ({ setReload, moduleId, setModalCreateClass}) => {
       <div className="create-classes-container">
         <h1>Cadastrar aula</h1>
         <div className="create-classes-content">
-          <form onSubmit={handleCreateClasses}>
+          <form onSubmit={handleSubmit(handleCreateClasses)}>
             <p>Digite nome da aula</p>
             {errors.name &&  <p className="errors">{errors.name}</p> }
-            <input type="text" id="name" placeholder="Nome" className={errors.name ? 'errors' : ''} value={name} 
-              onChange={e => setName(e.target.value)} />
+            <input type="text" id="name" placeholder="Nome" className={errors.name ? 'errors' : ''} {...register('name')} />
 
             {errors.class_date &&  <p className="errors">{errors.class_date}</p> }
-            <input type="datetime-local" color="var(--color-white)" className={errors.class_date ? 'errors' : ''} value={date} onChange={e => setDate(e.target.value)} />
+            <input type="datetime-local" color="var(--color-white)" className={errors.class_date ? 'errors' : ''} {...register('class_date')} />
             <button type="submit">Cadastrar</button>
           </form>
         </div>
