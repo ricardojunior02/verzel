@@ -30,11 +30,15 @@ const Class = () => {
   useEffect(() => {
     if(reload){
       (async () => {
-        const { data } = await api.get(`/classes/${module_id}`);
-        setTimeout(() => {
-          setLoading(false)
-          setClasses(data)
-        }, 500);
+        try {
+          const { data } = await api.get(`/classes/${module_id}`);
+          setTimeout(() => {
+            setLoading(false)
+            setClasses(data)
+          }, 500);
+        } catch (error) {
+          return setLoading(false)
+        }
       })()
       setReload(false);
     }
