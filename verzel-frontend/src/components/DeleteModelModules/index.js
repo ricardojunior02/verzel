@@ -4,14 +4,15 @@ import './styles.css';
 const DeleteModelModules = ({ moduleInfo, setShowModalDelete, setReload }) => {
 
   const deleteModule = async (_id) => {
-    const response = await api.delete(`/modules/${_id}`);
 
-    if(response.status !== 200){
-      return console.log('erro', response.status)
+    try {
+      await api.delete(`/modules/${_id}`);
+      setShowModalDelete(false);
+      setReload(true);
+    } catch (error) {
+      return alert('Erro ao excluir módulo, tente novamente')
     }
-
-    setShowModalDelete(false);
-    setReload(true)
+    
   }
   return (
   <div className="delete-model-container">
