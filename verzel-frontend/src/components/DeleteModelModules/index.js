@@ -16,7 +16,7 @@ const DeleteModelModules = ({ moduleInfo, setShowModalDelete, setReload }) => {
   return (
   <div className="delete-model-container">
       <main className="content">
-        <h3>Deseja realmente excluir esse módulo</h3>
+        <h3>Deseja realmente excluir esse módulo?</h3>
         <p>Ao realizar essa ação você irá excluir todas as aulas relacionadas a ele</p>
         <div className="buttons-actions">
           <button className="delete" onClick={() => deleteModule(moduleInfo._id)}>Deletar</button>
