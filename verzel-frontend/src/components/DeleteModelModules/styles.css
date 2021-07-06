@@ -1,0 +1,67 @@
+div.delete-model-container {
+  background: #21212190;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+div.delete-model-container main.content {
+  width: 400px;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 15px;
+
+  background: var(--background);
+  position: relative;
+  animation: visible 0.5s ease-in-out;
+}
+
+@keyframes visible {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+div.delete-model-container main.content p {
+  text-align: center;
+}
+
+div.delete-model-container main.content div.buttons-actions {
+  width: 50%;
+  position: absolute;
+  bottom: 50px;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+div.delete-model-container main.content div.buttons-actions button {
+  width: 80px;
+  height: 40px;
+  color: var(--color-white);
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+div.delete-model-container main.content div.buttons-actions button.delete {
+  border: 1px solid #3bd42d;
+}
+
+div.delete-model-container main.content div.buttons-actions button.cancel {
+  border: 1px solid #5e49ff;
+}
