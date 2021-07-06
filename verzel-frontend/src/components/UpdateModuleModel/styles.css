@@ -1,0 +1,84 @@
+div.update-model-container {
+  background: #21212190;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+div.update-model-container main.content {
+  width: 400px;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 15px;
+
+  background: var(--background);
+  animation: visible 0.5s ease-in-out;
+}
+
+@keyframes visible {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+div.update-model-container main.content h3 {
+  text-align: center;
+}
+
+div.update-model-container main.content form {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+div.update-model-container main.content form input {
+  width: 80%;
+  height: 40px;
+  outline: none;
+  border: 1px solid var(--color-green);
+  border-radius: 10px;
+  padding: 0 15px;
+
+  color: var(--color-white);
+}
+
+div.update-model-container main.content form div.buttons-actions {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+div.update-model-container main.content form div.buttons-actions button {
+  width: 45%;
+  height: 40px;
+  color: var(--color-white);
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+div.update-model-container main.content form div.buttons-actions button.update {
+  border: 1px solid #3bd42d;
+}
+
+div.update-model-container main.content form div.buttons-actions button.cancel {
+  border: 1px solid #5e49ff;
+}
