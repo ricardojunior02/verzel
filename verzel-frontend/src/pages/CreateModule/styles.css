@@ -1,0 +1,68 @@
+div.create-module-container {
+  padding: 40px 10%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+div.create-module-container div.create-module-content {
+  width: 300px;
+  height: 300px;
+  border: 1px solid var(--color-green);
+  border-radius: 10px;
+
+  padding: 20px;
+}
+
+div.create-module-container div.create-module-content form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+div.create-module-container div.create-module-content form p.error {
+  width: 100%;
+  color: red;
+  font-size: 10px;
+  text-align: start;
+}
+
+div.create-module-container div.create-module-content form input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid var(--color-green);
+  border-radius: 10px;
+  outline: none;
+  padding: 0 15px;
+
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+div.create-module-container div.create-module-content form input.errors {
+  border: 1px solid red;
+}
+
+div.create-module-container div.create-module-content form input::placeholder {
+  color: #fff9;
+}
+
+div.create-module-container div.create-module-content form button {
+  width: 100%;
+  height: 40px;
+  border: 1px solid var(--color-green);
+  border-radius: 10px;
+  padding: 0 15px;
+
+  margin-top: 10px;
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+div.create-module-container div.create-module-content form button:hover {
+  cursor: pointer;
+}
