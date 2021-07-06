@@ -1,0 +1,68 @@
+div.classes-container {
+  width: 100%;
+  min-height: 300px;
+  padding: 30px 10%;
+}
+
+div.classes-container nav {
+  display: flex;
+  align-items: center;
+}
+
+div.classes-container nav svg:hover {
+  cursor: pointer;
+}
+
+div.classes-container nav h1 {
+  margin-left: 5px;
+}
+
+div.classes-container div.classes-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+div.classes-container div.classes-content h3 {
+  color: var(--color-white);
+}
+
+@media (max-width: 1440px) {
+  div.classes-container div.classes-content {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+div.classes-container div.classes-content div.wrapper {
+  display: flex;
+  border-radius: 10px;
+  border: 1px solid var(--color-puple);
+  padding: 15px;
+}
+
+div.classes-container div.classes-content div.wrapper:hover {
+  border: 1px solid var(--color-green);
+}
+
+div.classes-container div.classes-content div.wrapper div.informations-classes {
+  width: 80%;
+}
+
+div.classes-container div.classes-content div.wrapper div.button-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+div.classes-container
+  div.classes-content
+  div.wrapper
+  div.button-actions
+  button {
+  border: none;
+
+  display: flex;
+  align-items: center;
+}
