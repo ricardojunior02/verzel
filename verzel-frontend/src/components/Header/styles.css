@@ -1,0 +1,44 @@
+header {
+  width: 100%;
+  padding: 40px 10%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid var(--color-puple);
+}
+
+header div.right {
+  display: flex;
+}
+
+header div.right a {
+  border: 1px solid var(--color-blue-light);
+  border-radius: 10px;
+  height: 43px;
+  color: var(--color-blue-light);
+  padding: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+header div.right button {
+  border: 1px solid var(--color-blue-light);
+  border-radius: 10px;
+  height: 43px;
+  color: var(--color-blue-light);
+  padding: 10px;
+  font-weight: 600;
+}
+
+header div.right a:hover {
+  border: 1px solid var(--color-white);
+  color: var(--color-white);
+}
+
+header div.right button:hover {
+  border: 1px solid var(--color-white);
+  color: var(--color-white);
+}
