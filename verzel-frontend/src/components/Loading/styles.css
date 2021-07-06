@@ -1,0 +1,27 @@
+.container-spin {
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading {
+  width: 150px;
+  height: 150px;
+  border: 5px solid var(--color-puple);
+  border-top-color: var(--color-green);
+  border-radius: 50%;
+
+  background: transparent;
+
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
+}
