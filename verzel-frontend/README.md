@@ -4,6 +4,8 @@
 
 Para iniciar o aplicativo antes temos de realizar alguns passos.
 
+Antes de mais nada precisamos já estar com o back-end rodando, e após isso podemos seguir os próximos passos.
+
 Deve-se rodar o comando yarn ou npm install, para instalar as dependencias do app,
 em seguida deve-se preencher algumas informações no arquivo .env, como REACT_APP_API_URL que é a url de conexão com o backend,
 REACT_APP_LOCAL_STORAGE que é o nome da chave onde vamos armazenar nosso token de autenticação.
@@ -15,7 +17,7 @@ Já com o app rodando temos acesso aos módulos existentes, que ao início não 
 
 ### Realizando login
 
-Para criar módulos existe um botão no header de login de admin, ao clicar nele será redirecionado para a tela de login, onde se deve fornecer o email e password fornecidos lá no .env do backend.
+Para fazer login de admin existe no header um botão de ADMIN LOGIN, ao clicar nele será redirecionado para a tela de login, onde se deve fornecer o email e password fornecidos lá no .env do backend.
 Após realizar o submit de login será redirecionado para a tela inicial, agora com acesso a ações permitidas somente para admin, como criar módulos e aulas, através de dois botões no header.
 
 ### Criando módulos
