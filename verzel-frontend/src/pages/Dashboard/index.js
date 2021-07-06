@@ -15,11 +15,16 @@ const Dashboard = () => {
   useEffect(() => { 
     if(reload){
       (async () => {
-        const { data } = await api.get('/modules');
-        setTimeout(() => {
-          setLoading(false)
-          setModules(data)
-        }, 500);
+        try {
+          const { data } = await api.get('/modules');
+          setTimeout(() => {
+            setLoading(false)
+            setModules(data)
+          }, 500);
+        } catch (error) {
+          return setLoading(false)
+        }
+        
       })()
       setReload(false);
     }
