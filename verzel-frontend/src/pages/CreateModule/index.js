@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
 import { useForm } from 'react-hook-form';
 import api from '../../api';
 import Header from '../../components/Header';
+import { Context } from '../../context';
 import './styles.css';
 
 const moduleSchema = Yup.object().shape({
@@ -12,9 +13,16 @@ const moduleSchema = Yup.object().shape({
 
 const CreateModule = () => {
   const [ visibleModule, setVisibleModule ] = useState(false);
-  const [errors, setErrors ] = useState({});
+  const [ errors, setErrors ] = useState({});
   const { register, handleSubmit } = useForm();
+  const { autheticate } = useContext(Context)
   const history = useHistory();
+
+  useEffect(() => {
+    if(!autheticate){
+      history.push('/')
+    }
+  }, [autheticate, history])
 
   const handleCreateModule = async (data) => {
 
