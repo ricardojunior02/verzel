@@ -8,7 +8,6 @@ const Authenticate = ({ children }) => {
   
   useEffect(() => {
     const token = localStorage.getItem(process.env.REACT_APP_LOCAL_STORAGE);
-
     if (token) {
       api.defaults.headers.Authorization = `Bearer ${JSON.parse(token)}`;
       setAuthenticate(true);
