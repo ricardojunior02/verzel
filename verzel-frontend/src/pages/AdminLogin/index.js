@@ -37,7 +37,7 @@ const Admin = () => {
 
         return setErrors(validationErrors);
       }
-      return alert('Erro ao fazer login, tente novamente mais tarde')
+      return alert(error.response.data.message)
     }
   }
 
