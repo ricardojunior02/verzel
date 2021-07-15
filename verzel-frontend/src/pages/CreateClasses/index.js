@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import * as Yup  from 'yup';
+import { Context } from '../../context';
 
 import api from '../../api';
 import Header from '../../components/Header';
@@ -19,6 +20,7 @@ const CreateClasses = () => {
   const [ errors, setErrors] = useState({});
   const [ modules, setmodules ] = useState([]);
   const {register, handleSubmit } = useForm();
+  const { authenticate } = useContext(Context)
 
   const history = useHistory();
   
@@ -29,7 +31,11 @@ const CreateClasses = () => {
 
   useEffect(() => {
     loadModules()
-  }, [])
+
+    if(!authenticate){
+      history.push('/')
+    }
+  }, [authenticate, history])
 
   const handleCreateClasses = async (data) => {
     try {
